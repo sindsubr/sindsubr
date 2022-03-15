@@ -1,0 +1,60 @@
+SQL Map
+Features
+Overview:
+-	Techniques
+-	Crawl
+-	Enumeration
+-	Batch
+-	Risk
+-	Level
+-	Threads
+-	Verbosity
+-	Proxy
+-	SQL Injection Via Burp-Suite
+
+--u
+--forms
+--data
+--headers
+--user-agent
+--cookie
+--flush-session
+--output-dir
+--tamper
+
+
+
+Techniques
+
+•	B: Boolean-based blind
+•	E: Error-based
+•	U: Union query-based
+•	S: Stacked queries
+•	T: Time-based blind
+•	Q: Inline queries
+	Technique=”B”
+
+Crawl
+
+Depth 1: https://www.example.com/news
+Depth 2: https://www.example.com/news/1
+Depth 3: https://www.example.com/news/1/2
+
+--crawl 3
+
+Batch
+The batch command is used for non-interactive sessions. When we are trying to scan something, SQLMap may ask us to provide input during the scan: for example, while using the crawl feature, the tool asks the user if the user want to scan the identified URL. When –batch is defined in the command, the tool uses a default value to proceed without asking the user.
+--batch
+ 	
+Verbose
+In case we want to see the payload being sent by the tool, we can use the verbose option. The values range from 1 to 6.
+
+Threads
+The threads option allows the user to define the number of concurrent requests to be sent by the SQLMap tool. This would reduce the overall testing time. This should not be kept to a higher value, as it may impact the accuracy of the result.
+
+SQL Injection
+--dbs
+--current-db
+--tables -D <database_name>
+--columns -T <table_name>
+--columns -T <table_name> --dump
